@@ -4,4 +4,3 @@ BishopFox sliver sliver-client_windows.exe$
 mvelazc0 PurpleSharp _x64.exe$
 mvelazc0 PurpleSharp _x86.exe$
 NextronSystems APTSimulator APTSimulator_pw_apt.zip$
-guardicore monkey InfectionMonkey-.*\.exe$

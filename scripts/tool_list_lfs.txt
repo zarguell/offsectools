@@ -1,2 +1,3 @@
 BishopFox sliver sliver-server_linux$
 guardicore monkey InfectionMonkey-.*\.AppImage$
+guardicore monkey InfectionMonkey-.*\.exe$
