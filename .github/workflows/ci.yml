@@ -1,0 +1,29 @@
+name: Check and download latest releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '6 5 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Scrape EPSS scores for current date
+      run: |-
+        ./scripts/loop_tools.sh ./scripts/tool_list.txt
+
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Update tools: ${timestamp}" || exit 0
+        git push
