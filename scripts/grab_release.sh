@@ -16,7 +16,7 @@ links=$(echo "${response}" | jq -r '.assets[].browser_download_url')
 
 file_link=""
 for link in $links; do
-    if [[ $link == *"$file_ext" ]]; then
+    if [[ $link =~ $file_ext ]]; then
         file_link="$link"
     fi
 done
