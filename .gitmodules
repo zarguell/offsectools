@@ -1,0 +1,57 @@
+[submodule "modules/ADExplorerSnapshot.py"]
+	path = modules/ADExplorerSnapshot.py
+	url = https://github.com/c3c/ADExplorerSnapshot.py
+[submodule "modules/PlumHound"]
+	path = modules/PlumHound
+	url = https://github.com/PlumHound/PlumHound
+[submodule "modules/BlueHound"]
+	path = modules/BlueHound
+	url = https://github.com/zeronetworks/BlueHound
+[submodule "modules/GoodHound"]
+	path = modules/GoodHound
+	url = https://github.com/idnahacks/GoodHound
+[submodule "modules/Certify"]
+	path = modules/Certify
+	url = https://github.com/GhostPack/Certify
+[submodule "modules/PSPKIAudit"]
+	path = modules/PSPKIAudit
+	url = https://github.com/GhostPack/PSPKIAudit
+[submodule "modules/WinPwn"]
+	path = modules/WinPwn
+	url = https://github.com/S3cur3Th1sSh1t/WinPwn
+[submodule "modules/Rubeus"]
+	path = modules/Rubeus
+	url = https://github.com/GhostPack/Rubeus
+[submodule "modules/bloodyAD"]
+	path = modules/bloodyAD
+	url = https://github.com/CravateRouge/bloodyAD
+[submodule "modules/autobloody"]
+	path = modules/autobloody
+	url = https://github.com/CravateRouge/autobloody
+[submodule "modules/Certipy"]
+	path = modules/Certipy
+	url = https://github.com/ly4k/Certipy
+[submodule "modules/RustHound"]
+	path = modules/RustHound
+	url = https://github.com/OPENCYBER-FR/RustHound
+[submodule "adidnsdump"]
+	path = adidnsdump
+	url = https://github.com/dirkjanm/adidnsdump
+[submodule "modules/RustScan"]
+	path = modules/RustScan
+	url = https://github.com/RustScan/RustScan
+[submodule "modules/arsenal"]
+	path = modules/arsenal
+	url = https://github.com/Orange-Cyberdefense/arsenal
+[submodule "modules/PEASS-ng"]
+	path = modules/PEASS-ng
+	url = https://github.com/carlospolop/PEASS-ng
+[submodule "modules/SharpCollection"]
+	path = modules/SharpCollection
+	url = https://github.com/Flangvik/SharpCollection
+[submodule "modules/ADRecon"]
+	path = modules/ADRecon
+	url = https://github.com/adrecon/ADRecon
+[submodule "modules/go-mimikatz"]
+	path = modules/go-mimikatz
+	url = https://github.com/vyrus001/go-mimikatz
