@@ -20,9 +20,9 @@ jobs:
       run: |
         cd RustHound
         docker build -t rusthound .
-        docker run -v $(pwd):/usr/src/rusthound -it rusthound windows
-        docker run -v $(pwd):/usr/src/rusthound -it rusthound linux_musl
-        docker run -v $(pwd):/usr/src/rusthound -it rusthound macos
+        docker run -v $(pwd):/usr/src/rusthound -d rusthound windows
+        docker run -v $(pwd):/usr/src/rusthound -d rusthound linux_musl
+        docker run -v $(pwd):/usr/src/rusthound -d rusthound macos
     - name: Copy RustHound
       run: |
         mkdir -p OPENCYBER-FR.RustHound
