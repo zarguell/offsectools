@@ -1,0 +1,34 @@
+name: Build RustHound
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 5 * * 1'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+    - name: Build RustHound
+      run: |
+        cd modules/RustHound
+        docker build -t rusthound .
+        docker run -v $(pwd):/usr/src/rusthound -it rusthound windows
+        docker run -v $(pwd):/usr/src/rusthound -it rusthound linux_musl
+        docker run -v $(pwd):/usr/src/rusthound -it rusthound macos
+    - name: Copy RustHound
+      run: |
+        mkdir -p OPENCYBER-FR.RustHound
+        cp modules/RustHound/rusthound* OPENCYBER-FR.RustHound
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Build Rusthound: ${timestamp}" || exit 0
+        git push
