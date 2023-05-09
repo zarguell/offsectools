@@ -20,20 +20,9 @@ jobs:
       run: |
         cd RustHound
         docker build -t rusthound .
-        docker run -v $(pwd):/usr/src/rusthound -d --name rusthound_windows rusthound windows
-        docker run -v $(pwd):/usr/src/rusthound -d --name rusthound_linux_musl rusthound linux_musl
-        docker run -v $(pwd):/usr/src/rusthound -d --name rusthound_macos rusthound macos
-        echo "Waiting for RustHound builds to finish..."
-        for i in {1..10}; do
-          if docker exec rusthound_windows cargo --version && docker exec rusthound_linux_musl cargo --version && docker exec rusthound_macos cargo --version; then
-            echo "All builds finished successfully."
-            exit 0
-          fi
-          echo "Waiting for RustHound builds to finish... (attempt $i)"
-          sleep 10
-        done
-        echo "Error: RustHound builds failed or timed out."
-        exit 1
+        docker run -v $(pwd):/usr/src/rusthound --name rusthound_windows rusthound windows
+        docker run -v $(pwd):/usr/src/rusthound --name rusthound_linux_musl rusthound linux_musl
+        docker run -v $(pwd):/usr/src/rusthound --name rusthound_macos rusthound macos
     - name: Copy RustHound
       run: |
         mkdir -p OPENCYBER-FR.RustHound
