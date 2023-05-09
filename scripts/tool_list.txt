@@ -6,9 +6,6 @@ mvelazc0 PurpleSharp _x86.exe$
 NextronSystems APTSimulator APTSimulator_pw_apt.zip$
 optiv Talon _linux_amd64$
 optiv Talon _windows_amd64.exe$
-zeronetworks BlueHound linux.tar.gz$
-zeronetworks BlueHound win32-x64-.*.zip$
-improsec ImproHound ImproHound.exe$
 S3cur3Th1sSh1t WinPwn .ps1$
 S3cur3Th1sSh1t WinPwn .exe$
 lkarlslund Adalanche adalanche-windows-amd64-v.*.exe$
