@@ -12,10 +12,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        submodules: 'recursive'
+        fetch-depth: 0
+    - name: Clone RustHound
+      run: |
+        git clone https://github.com/OPENCYBER-FR/RustHound
     - name: Build RustHound
       run: |
-        cd modules/RustHound
+        cd RustHound
         docker build -t rusthound .
         docker run -v $(pwd):/usr/src/rusthound -it rusthound windows
         docker run -v $(pwd):/usr/src/rusthound -it rusthound linux_musl
@@ -24,6 +27,9 @@ jobs:
       run: |
         mkdir -p OPENCYBER-FR.RustHound
         cp modules/RustHound/rusthound* OPENCYBER-FR.RustHound
+    - name: Remove clone
+      run: |
+        rm -rf ./RustHound
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
