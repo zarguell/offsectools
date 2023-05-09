@@ -26,7 +26,7 @@ jobs:
     - name: Copy RustHound
       run: |
         mkdir -p OPENCYBER-FR.RustHound
-        cp modules/RustHound/rusthound* OPENCYBER-FR.RustHound
+        cp RustHound/rusthound* OPENCYBER-FR.RustHound
     - name: Remove clone
       run: |
         rm -rf ./RustHound
