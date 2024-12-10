@@ -15,17 +15,19 @@ jobs:
         fetch-depth: 0
     - name: Clone RustHound
       run: |
-        git clone https://github.com/OPENCYBER-FR/RustHound
+        git clone https://github.com/g0h4n/RustHound-CE
+    - name: Get RustHound Dependencies
+      run: |
+        curl https://sh.rustup.rs -sSf | sh
+        sudo apt install libssl-dev pkg-config -y
     - name: Build RustHound
       run: |
-        cd RustHound
-        docker build -t rusthound .
-        docker run -v $(pwd):/usr/src/rusthound --name rusthound_windows rusthound windows
-        docker run -v $(pwd):/usr/src/rusthound --name rusthound_linux_musl rusthound linux_musl
+        cd RustHound-CE
+        make linux_x86_64
     - name: Copy RustHound
       run: |
-        mkdir -p OPENCYBER-FR.RustHound
-        cp RustHound/rusthound* OPENCYBER-FR.RustHound
+        mkdir -p g0h4n.RustHound-CE
+        cp RustHound-CE/rusthound* g0h4n.RustHound-CE
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
